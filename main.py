@@ -19,8 +19,8 @@ def lettercount(word):
 
 
 string = input("Enter the Word to count ")
-
 print(lettercount(string))
+
 
 # program to calculate the sum of numbers until the user enters zero
 # a = 1
@@ -70,3 +70,8 @@ monkey()
 # print(c)
 
 #   Write a program to perform all operations as calculator
+
+
+
+
+

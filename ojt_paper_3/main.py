@@ -13,8 +13,6 @@ print(a)
 # 2. Write a decorator function that will record the number of times a function is
 # called. Your decorator function should be called record_calls and call_count
 # attribute that keeps track of the number of times it was called.
-
-
 def record_calls(func):
     call_count = 0
     for i in range(5):
@@ -169,10 +167,10 @@ print(f)
 # This is line 2
 # This is a file
 
-with open("ojt_paper_3/my_file.txt","r") as file:
-    s=file.readlines()[::-1]
-    for i in s:
-        print(i,end="")
+# with open("ojt_paper_3/my_file.txt","r") as file:
+#     s=file.readlines()[::-1]
+#     for i in s:
+#         print(i,end="")
 
 # 12. Write a function called parse_ranges, which accepts a string containing ranges of
 # numbers and returns an iterable of those numbers.
@@ -224,12 +222,10 @@ def earliest_day(date1,date2):
         return date1 
     elif y1 > y2 :
         return date2 
-    
     if m1 < m2:
         return date1 
     elif m1 > m2:
         return date2 
-    
     if d1 < d2:
         return date1 
     elif d1> d2:
@@ -246,8 +242,12 @@ def float_range(start,stop,step):
 
     return l
 
-print(float_range(0.5,2.5,0.5))
+# r=float_range(0.5,2.5,0.5)
+# # for i in r:
+# #     print(i)
         
+
+
 
 
 
@@ -343,6 +343,9 @@ meetup_date(2012,3,22)
 def Invalid(Expection):
     pass
 
-import os 
-print(os.cpu_count())
+# import os 
+# print(os.cpu_count())
+
+
+
 

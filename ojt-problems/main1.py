@@ -43,24 +43,6 @@
 
 
 
-
-
-a = "abb24ccc8ddbbca1"
-x= ''
-
-for i in a:
-    if i.isalpha() and (i not in x) :
-        x+=i+str(a.count(i)) 
-    elif i.isdigit():
-        x+=i
-
-print(x)
-
-
-
-
-
-
 input = "1211"
 output = ""
 c = 0
@@ -74,6 +56,6 @@ print(c)
 
 
 Dict = {2:'sai',6:'saiteja',1:'reddy'}
-sorted(Dict) 
+print(sorted(Dict)) 
 print(Dict) 
 

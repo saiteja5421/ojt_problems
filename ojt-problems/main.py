@@ -55,13 +55,13 @@ print(match+input)
 
 #monkeypatching 
 
-def hello(self):
+def hello():
     print("hello() function calling")
 
 def monkey():
     print("monkey() function is calling")
 
-hello = monkey
+hello= monkey
 hello()
 
 
@@ -102,13 +102,10 @@ def transform_string(input_str):
     
     # add the last character and its count to the output string
     #output_str += current_char + str(current_count)
-    
     return output_str
 
 s = transform_string("abbbc123adbddd")
 print(s)
-
-
 
 names_list = ['Prabhu', 'Rahul', 'Arunesh', 'Sonali', 'Rakshit']
 sorted_name = sorted(names_list,key=lambda x : x[-1])
@@ -116,34 +113,36 @@ print(sorted_name)
 
 
 
-# code for testing decorator chaining
-def decor1(func):
-	def inner():
-		x = func()
-		return x * x
-	return inner
 
-def decor(func):
-	def inner():
-		x = func()
-		return 2 * x
-	return inner
+# # code for testing decorator chaining
+# def decor1(func):
+# 	def inner():
+# 		x = func()
+# 		print(x * x)
+# 	inner()
 
-def decor2(func):
-    def inner():
-        x=func()
-        return x + 1
-    return
+# def decor(func):
+# 	def inner():
+# 		x = func()
+# 		return 2+x
+# 	return inner
 
-@decor1
-@decor
+# def decor2(func):
+#     def inner():
+#         x=func()
+#         return x + 1
+#     return inner
+
+
+# @decor1
+#@decor
 def num():
 	return 10
 
-@decor
-@decor2
-def num2():
-	return 10
+# @decor
+# @decor2
+# def num2():
+# 	return 10
 
 print(num())
-print(num2())
+# print(num2()) 

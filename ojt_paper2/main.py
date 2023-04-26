@@ -141,16 +141,16 @@ def reverseVowels(s):
         right = len(s) - 1
         m = 'aeiouAEIOU'
         while left < right:
-            if s[left] in m and s[right] in m:
+            if s[left] not in m and s[right] not in m:
                 
                 s[left], s[right] = s[right], s[left]
                 
                 left += 1; right -= 1
             
-            elif s[left] not in m:
+            elif s[left]  in m:
                 left += 1
             
-            elif s[right] not in m:
+            elif s[right] in m:
                 right -= 1
             
         return ''.join(s)
@@ -193,8 +193,8 @@ print(num(x,y))
 list_5 = ['Msys', 'Tata', 'Wells', 'Mobinius']
 list_6 = ['Technologies', 'Power', 'Fargo', 'Technologies']
 
-list_7 = map(lambda x,y: x+y,list_5,list_6)
-print(list(list_7))
+list_7 = list(map(lambda x,y: x+" "+y,list_5,list_6))
+print(list_7)
 
 
 # 15. Given a list --
@@ -229,9 +229,9 @@ print(str_)
 # o/p will be 
 #    1
 #  212
-#   	32123
-# 	4321234
-#   	32123 
+#  32123
+# 4321234
+#   32123 
 #  212 
 #    1
 
@@ -321,7 +321,7 @@ string=string.replace(" ","")
 #string = string[::-1].replace(" ", "")
 # print(string)
 for i in range(0,len(string),4):
-     print(string[i:i+4])
+     print(string[i:i+4][::-1])
 
 #Output:
 # lleH
@@ -367,7 +367,7 @@ dict1.update(dict2)
 print(dict1)
 print("&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&")
 #way2
-merge_dict=({**dict1,**dict2})
+merge_dict={**dict1,**dict2}
 print(merge_dict)
 print("-------------------------------------------------")
 #update the salary
@@ -444,18 +444,39 @@ print(count)
 # L3 0 0 0 1
 # L2 1 0 0 1 1
 # L1 1 1 0 1 1 1
+
+
+
+
+
 # 27. Need to find minimum number of new chair purchase for work area with simulated set of array  values.
 # C - A new employee comes to work area and new chair need to purchase
 # R - Employee from work area goes to meeting room and free up the chair
 # U - Employee comes from meeting room and occupy the chair
 # L - Leaves the work area and free up the chair
 # Input :
-# n = 3
-# simulated value : ['CCRLU', 'CRLCUC', 'CCCC']
+n = 3
+simulatedvalue = ['CCRLU', 'CRLCUC', 'CCCC']
 # Output:
 # 2
 # 2
 # 4
+
+for i in simulatedvalue:
+    c=0
+    n=0
+    for j in i:
+        if j =="C" or j == "U":
+            if c > 0:
+                c-=1
+            else:
+                n+=1
+        else:
+            c+=1
+    print(n)
+            
+          
+
 # 28. Given a string s and an integer k, reverse the first k characters for every 2k characters counting from the start of the string.
 # If there are fewer than k characters left, reverse all of them. If there are less than 2k but greater  than or equal to k characters, then reverse the first k characters and leave the other as original.
 # Input: s = "abcdefg", k = 2
